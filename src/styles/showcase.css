@@ -416,4 +416,13 @@
   
   }
 
+  @media (max-width: 768px) {
+
+    .input-showcase, .layout-showcase {
+  
+      justify-content: center;
+    }
+  
+  }
+
   

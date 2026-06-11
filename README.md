@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-배포 주소 입력
+frame-design-system.vercel.app
 
 ---
 
