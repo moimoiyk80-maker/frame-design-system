@@ -1,0 +1,72 @@
+.tag {
+
+    display: inline-flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    padding:
+      10px 16px;
+  
+    border:
+      1px solid
+      var(--color-border);
+  
+    border-radius:
+      var(--radius-lg);
+  
+    background:
+      var(--color-background);
+  
+    color:
+      var(--color-text);
+  
+    font-size: 14px;
+  
+    font-weight: 500;
+  
+    cursor: pointer;
+  
+    transition:
+      all
+      var(--duration-fast)
+      var(--easing-emphasized);
+  }
+
+  .tag:hover:not(:disabled) {
+
+    border-color:
+      var(--color-accent);
+  
+    transform:
+      translateY(-2px);
+  }
+
+  .tag-selected {
+
+    background:
+      var(--color-accent);
+  
+    color:
+      white;
+  
+    border-color:
+      var(--color-accent);
+  }
+
+  .tag-selected:hover {
+
+    background:
+      var(--color-accent-hover);
+  
+    border-color:
+      var(--color-accent-hover);
+  }
+
+  .tag:disabled {
+
+    opacity: .5;
+  
+    cursor:
+      not-allowed;
+  }
