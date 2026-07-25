@@ -269,6 +269,8 @@ Light Theme / Dark Theme
 문서화의 목적은 컴포넌트 목록을 보여주는 것이 아니라,
 디자이너와 개발자가 동일한 기준으로 UI를 이해하고 사용할 수 있도록 하는 것이었습니다.
 
+- [Case Study](./docs/case-study.md)
+
 ---
 
 ## Application to SLI Scientific
