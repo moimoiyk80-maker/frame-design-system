@@ -1,12 +1,15 @@
 # Frame Design System
 
-디자인 토큰 기반의 UI 시스템을 구축하고, 이를 활용해 재사용 가능한 컴포넌트와 패턴을 설계한 디자인 시스템 프로젝트입니다.
+컬러, 타이포그래피와 간격을 디자인 토큰으로 구조화하고, 일관된 컴포넌트와 테마로 확장한 React 기반 디자인 시스템 프로젝트
 
-단순히 UI를 구현하는 것을 넘어 색상, 타이포그래피, 레이아웃, 모션 등 시각적 기준을 토큰화하고, 실제 서비스 환경에서 사용할 수 있는 컴포넌트 아키텍처를 구성하는 것을 목표로 했습니다.
+개별 화면을 반복해서 스타일링하는 방식에서 벗어나, 시각적 기준을 토큰으로 정의하고 
+이를 버튼, 입력 요소, 카드, 모달과 테마에 일관되게 적용하는 과정을 설계하고 구현했습니다.
 
-## Live Demo
+## Project Links
 
-frame-design-system.vercel.app
+- [Live Demo](https://frame-design-system.vercel.app)
+- [View Case Study](./docs/case-study.md)
+- [SLI Scientific Application](https://platform-redesign-five.vercel.app)
 
 ---
 
@@ -26,181 +29,284 @@ frame-design-system.vercel.app
 
 ---
 
-## Why This Project?
+## Project Overview
 
-프로젝트를 진행하며 동일한 스타일이 여러 곳에서 반복되고, 컴포넌트마다 스타일 기준이 달라질 경우 유지보수 비용이 빠르게 증가한다는 점에 관심을 가지게 되었습니다.
+Frame Design System은 컬러, 타이포그래피, 간격, 레이아웃과 모션을 디자인 토큰으로 구조화하고, 
+이를 공통 컴포넌트와 테마에 적용한 React 기반 디자인 시스템 프로젝트입니다.
 
-이를 해결하기 위해 디자인 토큰을 중심으로 시스템을 설계하고, 일관된 UI와 확장 가능한 구조를 구축하는 과정을 직접 경험해보고자 했습니다.
+개별 UI를 만드는 데 그치지 않고, 
+여러 화면에서 동일한 시각적 규칙과 인터랙션을 유지할 수 있는 
+기준을 설계하는 데 집중했습니다.
 
----
+## Why This Project
 
-## Tech Stack
+Minimal Ecommerce를 구현하면서 버튼, 카드, 간격과 상태 표현이 여러 화면에서 반복되고, 
+개별 컴포넌트마다 기준을 다르게 적용하면 UI 일관성을 유지하기 어렵다는 점을 확인했습니다.
 
-* React
-* JavaScript (ES6+)
-* Vite
-* CSS
-* GitHub
-* Vercel
-
----
-
-## Design Foundations
-
-### Color Tokens
-
-브랜드 컬러와 시맨틱 컬러를 분리하여 관리했습니다.
-
-* Brand
-* Accent
-* Success
-* Warning
-* Error
-* Info
-
-### Typography
-
-일관된 정보 전달을 위한 타이포그래피 계층을 정의했습니다.
-
-* Display
-* Heading
-* Body
-* Caption
-
-### Spacing
-
-컴포넌트와 레이아웃 전반에서 사용하는 간격 기준을 토큰으로 관리했습니다.
-
-### Radius
-
-컴포넌트의 시각적 일관성을 위한 Radius 토큰을 정의했습니다.
-
-### Shadow
-
-레이어와 깊이를 표현하기 위한 Shadow 토큰을 구성했습니다.
-
-### Motion
-
-애니메이션 지속 시간과 이징 값을 토큰화하여 인터랙션의 일관성을 확보했습니다.
-
-### Layout
-
-반응형 환경을 고려한 레이아웃 토큰을 정의했습니다.
-
-* Container
-* Breakpoints
-* 12 Column Grid
-
----
-
-## Theme System
-
-라이트·다크 모드 전환을 지원하며, 접근성을 고려한 색상 대비와 일관된 시각적 계층을 제공합니다.
-
-### Features
-
-* Light / Dark Mode Toggle
-* CSS Variable 기반 Theme Architecture
-* 실시간 테마 전환 지원
-
----
-
-## Components
-
-### Button
-
-다양한 상태를 지원하는 재사용 가능한 버튼 컴포넌트
-
-* Primary
-* Secondary
-* Ghost
-* Disabled
-* Loading
-
-### Input
-
-기본 폼 입력 컴포넌트
-
-### Badge
-
-상태 정보를 표현하기 위한 컴포넌트
-
-### Tag
-
-메타데이터 및 분류를 위한 컴포넌트
-
-### Modal
-
-오버레이 기반 인터랙션 컴포넌트
-
-지원 기능
-
-* Overlay Click Close
-* ESC Key Close
-* Scroll Lock
-
----
-
-## Patterns
-
-### Empty State
-
-데이터가 존재하지 않는 상황에서 사용자에게 적절한 안내를 제공하는 패턴
-
-### Product Card
-
-디자인 토큰을 기반으로 구성된 커머스 카드 패턴
-
----
-
-## UX Engineering
-
-### useScrollLock
-
-모달 활성화 시 백그라운드 스크롤을 방지하는 커스텀 훅을 구현했습니다.
-
-### Keyboard Interaction
-
-ESC 키 입력을 통해 모달을 종료할 수 있도록 구현했습니다.
-
-### Theme Toggle
-
-CSS Variable 기반의 테마 전환 시스템을 구현했습니다.
-
----
-
-## Folder Structure
+이를 계기로 화면 단위 구현에서 한 단계 확장해
+컬러, 타이포그래피, 간격과 상태를 공통 규칙으로 정의하고
+컴포넌트와 테마에 적용하는 디자인 시스템을 구축했습니다.
 
 ```text
-src
-├─ components
-├─ hooks
-├─ pages
-├─ styles
-└─ tokens
+React UI 구현
+        ↓
+반복되는 시각 규칙 발견
+        ↓
+디자인 토큰과 컴포넌트 체계화
 ```
 
 ---
 
-## What I Learned
+## Design System Structure
 
-* 디자인 토큰 기반 설계 방식
-* 재사용 가능한 컴포넌트 아키텍처 구성
-* Theme System 구축 경험
-* Layout Foundation 설계 경험
-* Modal 인터랙션 및 UX 엔지니어링 구현
-* 디자인 시스템 문서화 경험
+Frame Design System은 시각적 기준에서 시작해 
+실제 UI 패턴으로 확장되는 구조로 설계했습니다.
+
+```text
+Design Foundations
+        ↓
+Design Tokens
+        ↓
+Components
+        ↓
+Patterns
+        ↓
+Theme Application
+```
+
+### Design Foundations
+
+UI 전반에서 반복되는 시각적 기준을 먼저 정의했습니다.
+
+- Color
+- Typography
+- Spacing
+- Radius
+- Shadow
+- Layout
+- Motion
+
+각 기준을 개별 화면의 스타일 값으로 직접 작성하지 않고,
+여러 컴포넌트에서 공유할 수 있는 토큰 구조로 정리했습니다.
+
+### Design Tokens
+
+디자인 토큰은 시각적 값을 목적에 따라 구분해 관리했습니다.
+
+- Primitive Tokens : 원시 색상과 기본 수치
+
+- Semantic Tokens : 텍스트, 배경, 보더와 상태의 역할
+
+- Component Tokens : 버튼, 입력 요소와 카드에 적용되는 값
+
+예를 들어 특정 색상 값을 컴포넌트에 직접 사용하는 대신,
+primary, surface, text, border와 같은 의미 기반 토큰을 사용해 
+테마가 변경되어도 UI의 역할이 유지되도록 구성했습니다.
+
+### Components
+
+토큰을 기반으로 반복되는 UI 요소를 공통 컴포넌트로 구현했습니다.
+
+- Button
+- Input
+- Select
+- Checkbox
+- Radio
+- Switch
+- Badge
+- Card
+- Modal
+- Tabs
+- Accordion
+- Tooltip
+
+각 컴포넌트는 크기, 상태와 사용 목적에 따라 변형할 수 있도록 구성했습니다.
+
+### Component States
+
+컴포넌트의 기본 형태뿐 아니라 사용 과정에서 발생하는 상태를 함께 정의했습니다.
+
+- Default
+- Hover
+- Focus
+- Active
+- Selected
+- Disabled
+- Error
+
+이를 통해 화면마다 상태 표현이 달라지지 않고, 동일한 상호작용 규칙을 유지할 수 있도록 했습니다.
+
+### Patterns
+
+개별 컴포넌트를 조합해 실제 화면에서 반복적으로 사용되는 UI 패턴으로 확장했습니다.
+
+- Form Field
+- Search Interface
+- Filter Group
+- Card Group
+- Modal Action
+- Empty State
+- Navigation Pattern
+
+개별 컴포넌트의 정의에 그치지 않고,
+실제 화면에서 함께 사용되는 구성과 인터랙션 패턴까지 확장했습니다.
 
 ---
 
-## Future Improvements
+## Design-to-Code
 
-* Checkbox
-* Radio
-* Switch
-* Form Validation
-* Accessibility Improvements
-* Component Documentation Expansion
+Frame Design System에서는 디자인 기준과 코드 구현이 분리되지 않도록 
+동일한 구조와 명칭을 유지하는 데 집중했습니다.
 
+```text
+Figma Foundation
+        ↓
+Design Token
+        ↓
+CSS Custom Property
+        ↓
+React Component
+        ↓
+UI Pattern
 ```
+
+### Token Implementation
+
+컬러, 간격, 타이포그래피와 기타 시각적 값을 CSS 사용자 정의 속성으로 관리했습니다.
+
+:root {
+  --color-primary: ...;
+  --color-surface: ...;
+  --color-text-primary: ...;
+  --space-4: ...;
+  --radius-medium: ...;
+  --shadow-card: ...;
+}
+
+컴포넌트 내부에 시각적 값을 반복해서 작성하지 않고,
+공통 토큰을 참조하도록 구성했습니다.
+
+### Semantic Naming
+
+토큰 이름은 단순한 색상이나 수치보다 UI에서 수행하는 역할을 기준으로 정의했습니다.
+
+blue-600
+→ 원시 값
+
+color-primary
+→ 주요 행동 색상
+
+color-surface
+→ 콘텐츠 배경
+
+color-text-muted
+→ 보조 텍스트
+
+이 방식은 시각 스타일이 변경돼도 컴포넌트의 의미와 사용 목적을 유지할 수 있도록 합니다.
+
+### Component Variants
+
+하나의 컴포넌트를 화면마다 새로 만들지 않고, 
+속성을 통해 스타일과 상태를 변경할 수 있도록 구성했습니다.
+
+<Button variant="primary" size="medium">
+  Confirm
+</Button>
+
+<Button variant="secondary" size="medium">
+  Cancel
+</Button>
+
+버튼의 사용 목적, 크기와 상태가 명시적으로 드러나도록 해
+디자인 기준과 구현 방식이 일치하도록 했습니다.
+
+### Theme Application
+
+동일한 컴포넌트 구조를 유지하면서 의미 기반 토큰 값을 변경해
+Light와 Dark Theme을 적용했습니다.
+
+테마별로 컴포넌트 스타일을 다시 작성하지 않고 
+배경, 텍스트, 보더와 상태 색상에 연결된 토큰 값을 전환하는 방식으로 구현했습니다.
+
+```text
+Component Structure
+        +
+Semantic Tokens
+        ↓
+Light Theme / Dark Theme
 ```
+
+주요 테마 토큰은 다음과 같습니다.
+
+- color-background
+- color-surface
+- color-text-primary
+- color-text-secondary
+- color-border
+- color-primary
+- color-focus
+
+각 토큰은 특정 색상값보다 UI에서 수행하는 역할을 기준으로 정의했습니다.
+
+이를 통해 테마가 변경돼도 
+버튼, 입력 요소, 카드와 모달의 정보 계층과 사용 목적이 유지되도록 했습니다.
+
+동일한 컴포넌트 구조에서 Light와 Dark Theme을 지원하고,
+화면별 개별 색상 수정을 줄일 수 있는 구조를 구성했습니다.
+
+### Documentation
+
+각 컴포넌트는 다음 내용을 확인할 수 있도록 문서화했습니다.
+
+- Purpose
+- Variants
+- Sizes
+- States
+- Usage Example
+- Interaction
+- Accessibility Considerations
+
+문서화의 목적은 컴포넌트 목록을 보여주는 것이 아니라,
+디자이너와 개발자가 동일한 기준으로 UI를 이해하고 사용할 수 있도록 하는 것이었습니다.
+
+---
+
+## Application to SLI Scientific
+
+Frame Design System에서 정리한 토큰과 컴포넌트 설계 원칙은
+다음 프로젝트인 SLI Scientific에 적용했습니다.
+
+SLI Scientific에서는 Frame의 구조를 그대로 복제하기보다,
+B2B 과학장비 플랫폼의 정보 밀도와 전문적인 브랜드 맥락에 맞게
+UI Foundation으로 재구성했습니다.
+
+### Applied Principles
+
+| Frame Design System | SLI Scientific |
+|---|---|
+| Semantic color tokens | Deep Blue, Slate, Muted Cyan 기반 컬러 체계 |
+| Typography scale | 제품명, 섹션 제목, 설명과 사양 정보의 계층 |
+| Spacing rules | 페이지 섹션과 콘텐츠 그룹의 공통 간격 |
+| Button variants | 주요 행동, 보조 행동과 텍스트 링크 구분 |
+| Card principles | Product, Resource, Support 카드에 적용 |
+| Layout rules | 공통 컨테이너와 페이지 정렬 기준 |
+| Responsive rules | Desktop, Tablet, Mobile 레이아웃 전환 |
+| Component states | Hover, Focus, Selected, Disabled 상태 표현 |
+
+### Contextual Extension
+
+SLI Scientific의 사용 맥락에 맞춰 다음 부분을 확장했습니다.
+
+- 긴 제품명과 모델명을 수용하는 카드 구조
+- 기술 사양과 문서를 위한 높은 정보 밀도
+- 제품 이미지와 텍스트 정보의 균형
+- 모델 선택과 문의 흐름
+- 모바일 환경에서의 제품 상세 재배치
+- B2B 서비스에 맞는 차분한 시각 체계
+
+이를 통해 디자인 토큰과 컴포넌트 원칙이
+실제 B2B 플랫폼의 화면과 인터랙션에 어떻게 적용되는지 검증했습니다.
+
+- [Live SLI Scientific](platform-redesign-five.vercel.app)
+
+---
