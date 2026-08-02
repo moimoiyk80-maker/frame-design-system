@@ -618,5 +618,5 @@ SLI Scientific
 
 ## Links
 
-- [Live Demo](frame-design-system.vercel.app/)
-- [SLI Scientific Project](platform-redesign-five.vercel.app)
+- [Live Demo](http://frame-design-system.vercel.app/)
+- [SLI Scientific Project](http://platform-redesign-five.vercel.app)

@@ -309,6 +309,6 @@ SLI Scientific의 사용 맥락에 맞춰 다음 부분을 확장했습니다.
 이를 통해 디자인 토큰과 컴포넌트 원칙이
 실제 B2B 플랫폼의 화면과 인터랙션에 어떻게 적용되는지 검증했습니다.
 
-- [Live SLI Scientific](platform-redesign-five.vercel.app)
+- [Live SLI Scientific](https://platform-redesign-five.vercel.app)
 
 ---
