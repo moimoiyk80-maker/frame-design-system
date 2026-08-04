@@ -1,9 +1,11 @@
 # Frame Design System
 
-컬러, 타이포그래피와 간격을 디자인 토큰으로 구조화하고, 일관된 컴포넌트와 테마로 확장한 React 기반 디자인 시스템 프로젝트
+컬러, 타이포그래피, 간격과 상태 기준을 디자인 토큰으로 구조화하고,
+일관된 컴포넌트와 Light/Dark Theme으로 확장한 디자인 시스템 프로젝트
 
-개별 화면을 반복해서 스타일링하는 방식에서 벗어나, 시각적 기준을 토큰으로 정의하고 
-이를 버튼, 입력 요소, 카드, 모달과 테마에 일관되게 적용하는 과정을 설계하고 구현했습니다.
+개별 화면을 반복해서 스타일링하는 방식에서 벗어나,
+시각적 기준을 토큰으로 정의하고 공통 UI와 테마에 적용한 뒤
+브라우저 화면에서 결과를 검수·조정했습니다.
 
 ## Project Links
 
@@ -31,28 +33,34 @@
 
 ## Project Overview
 
-Frame Design System은 컬러, 타이포그래피, 간격, 레이아웃과 모션을 디자인 토큰으로 구조화하고, 
-이를 공통 컴포넌트와 테마에 적용한 React 기반 디자인 시스템 프로젝트입니다.
+Frame Design System은 컬러, 타이포그래피, 간격, 레이아웃과 모션을
+디자인 토큰으로 구조화하고, 이를 공통 UI와 Light/Dark Theme에
+일관되게 적용하기 위해 제작한 개인 포트폴리오 프로젝트입니다.
 
-개별 UI를 만드는 데 그치지 않고, 
-여러 화면에서 동일한 시각적 규칙과 인터랙션을 유지할 수 있는 
-기준을 설계하는 데 집중했습니다.
+개별 화면을 만드는 데 그치지 않고,
+여러 화면에서 동일한 시각적 규칙과 인터랙션 기준을 유지할 수 있도록
+토큰, 컴포넌트 상태와 사용 원칙을 정리하는 데 집중했습니다.
+
+React 기반 구현 환경은 AI 도구를 활용해 구성했으며,
+설계한 토큰과 UI 기준이 실제 브라우저 화면에서 의도대로 표현되는지
+반복적으로 검수·수정했습니다.
 
 ## Why This Project
 
-Minimal Ecommerce를 구현하면서 버튼, 카드, 간격과 상태 표현이 여러 화면에서 반복되고, 
-개별 컴포넌트마다 기준을 다르게 적용하면 UI 일관성을 유지하기 어렵다는 점을 확인했습니다.
+Minimal Ecommerce를 구성하는 과정에서
+버튼, 카드, 간격과 상태 표현이 여러 화면에서 반복되고,
+화면마다 기준을 다르게 적용하면 UI의 일관성을 유지하기 어렵다는 점을 확인했습니다.
 
-이를 계기로 화면 단위 구현에서 한 단계 확장해
-컬러, 타이포그래피, 간격과 상태를 공통 규칙으로 정의하고
-컴포넌트와 테마에 적용하는 디자인 시스템을 구축했습니다.
+이를 계기로 개별 화면 중심의 작업에서 확장해,
+컬러, 타이포그래피, 간격과 상태를 공통 기준으로 정의하고
+여러 UI에 재사용할 수 있는 디자인 시스템 구조를 설계했습니다.
 
 ```text
-React UI 구현
+반응형 UI 구성
         ↓
-반복되는 시각 규칙 발견
+반복되는 시각·상태 기준 발견
         ↓
-디자인 토큰과 컴포넌트 체계화
+디자인 토큰과 컴포넌트 기준 체계화
 ```
 
 ---
@@ -105,26 +113,24 @@ primary, surface, text, border와 같은 의미 기반 토큰을 사용해
 
 ### Components
 
-토큰을 기반으로 반복되는 UI 요소를 공통 컴포넌트로 구현했습니다.
+토큰을 기반으로 반복되는 UI 요소의 공통 구조와
+크기, 변형, 상태 기준을 정의하고 실제 화면에 적용했습니다.
 
 - Button
 - Input
 - Select
-- Checkbox
-- Radio
-- Switch
 - Badge
 - Card
 - Modal
-- Tabs
-- Accordion
-- Tooltip
+- Tag
+- Motion
 
-각 컴포넌트는 크기, 상태와 사용 목적에 따라 변형할 수 있도록 구성했습니다.
+각 UI는 크기, 상태와 사용 목적에 따라
+일관된 변형 기준을 사용할 수 있도록 정리했습니다.
 
 ### Component States
 
-컴포넌트의 기본 형태뿐 아니라 사용 과정에서 발생하는 상태를 함께 정의했습니다.
+컴포넌트의 사용 맥락에 따라 다음 상태 기준을 정의했습니다.
 
 - Default
 - Hover
@@ -146,17 +152,19 @@ primary, surface, text, border와 같은 의미 기반 토큰을 사용해
 - Card Group
 - Modal Action
 - Empty State
-- Navigation Pattern
 
 개별 컴포넌트의 정의에 그치지 않고,
 실제 화면에서 함께 사용되는 구성과 인터랙션 패턴까지 확장했습니다.
 
 ---
 
-## Design-to-Code
+## Design-to-UI
 
-Frame Design System에서는 디자인 기준과 코드 구현이 분리되지 않도록 
-동일한 구조와 명칭을 유지하는 데 집중했습니다.
+Frame Design System에서는 Figma에서 정의한 시각 기준이
+브라우저 화면에서도 같은 의미와 구조로 적용되는지 확인하는 데 집중했습니다.
+
+토큰 이름, 컴포넌트 상태와 테마 기준을 일관되게 유지하고,
+디자인 결과와 실제 UI 사이의 차이를 검수·조정했습니다.
 
 ```text
 Figma Foundation
@@ -165,15 +173,17 @@ Design Token
         ↓
 CSS Custom Property
         ↓
-React Component
+React-based UI
         ↓
 UI Pattern
 ```
 
-### Token Implementation
+### Token Application
 
-컬러, 간격, 타이포그래피와 기타 시각적 값을 CSS 사용자 정의 속성으로 관리했습니다.
+컬러, 간격, 타이포그래피와 기타 시각 기준은
+CSS 사용자 정의 속성으로 적용되었습니다.
 
+```css
 :root {
   --color-primary: ...;
   --color-surface: ...;
@@ -182,9 +192,10 @@ UI Pattern
   --radius-medium: ...;
   --shadow-card: ...;
 }
-
-컴포넌트 내부에 시각적 값을 반복해서 작성하지 않고,
-공통 토큰을 참조하도록 구성했습니다.
+```
+반복되는 시각 값을 개별 UI마다 따로 지정하지 않고
+공통 토큰을 참조하는 구조로 정리했으며,
+브라우저 화면에서 색상, 간격과 상태 표현이 일관되게 적용되는지 확인했습니다.
 
 ### Semantic Naming
 
@@ -206,9 +217,10 @@ color-text-muted
 
 ### Component Variants
 
-하나의 컴포넌트를 화면마다 새로 만들지 않고, 
-속성을 통해 스타일과 상태를 변경할 수 있도록 구성했습니다.
+버튼을 화면마다 다른 기준으로 만들지 않고,
+사용 목적, 크기와 상태에 따라 일관된 변형 기준을 사용할 수 있도록 정리했습니다.
 
+```jsx
 <Button variant="primary" size="medium">
   Confirm
 </Button>
@@ -216,20 +228,18 @@ color-text-muted
 <Button variant="secondary" size="medium">
   Cancel
 </Button>
-
-버튼의 사용 목적, 크기와 상태가 명시적으로 드러나도록 해
-디자인 기준과 구현 방식이 일치하도록 했습니다.
+```
+위 코드는 구현 환경에서 적용된 예시이며,
+디자인 관점에서는 Primary와 Secondary의 위계,
+크기별 간격과 상태 표현이 일관되게 유지되는지를 중심으로 검수했습니다.
 
 ### Theme Application
 
-동일한 컴포넌트 구조를 유지하면서 의미 기반 토큰 값을 변경해
-Light와 Dark Theme을 적용했습니다.
-
-테마별로 컴포넌트 스타일을 다시 작성하지 않고 
-배경, 텍스트, 보더와 상태 색상에 연결된 토큰 값을 전환하는 방식으로 구현했습니다.
+동일한 UI 구조를 유지하면서
+의미 기반 토큰 값이 Light와 Dark Theme에 맞게 전환되도록 구성했습니다.
 
 ```text
-Component Structure
+UI Structure
         +
 Semantic Tokens
         ↓
@@ -248,15 +258,16 @@ Light Theme / Dark Theme
 
 각 토큰은 특정 색상값보다 UI에서 수행하는 역할을 기준으로 정의했습니다.
 
-이를 통해 테마가 변경돼도 
-버튼, 입력 요소, 카드와 모달의 정보 계층과 사용 목적이 유지되도록 했습니다.
+이를 통해 테마가 변경되어도
+버튼, 입력 요소, 카드와 모달의 정보 위계와 사용 목적이 유지되는지
+브라우저 화면에서 비교·검수했습니다.
 
-동일한 컴포넌트 구조에서 Light와 Dark Theme을 지원하고,
-화면별 개별 색상 수정을 줄일 수 있는 구조를 구성했습니다.
+화면별로 색상을 다시 정의하지 않고도
+같은 의미와 위계를 유지할 수 있는 기준을 정리했습니다.
 
 ### Documentation
 
-각 컴포넌트는 다음 내용을 확인할 수 있도록 문서화했습니다.
+각 UI는 사용 목적과 상태 기준을 확인할 수 있도록 다음 내용을 정리했습니다.
 
 - Purpose
 - Variants
@@ -264,10 +275,9 @@ Light Theme / Dark Theme
 - States
 - Usage Example
 - Interaction
-- Accessibility Considerations
 
-문서화의 목적은 컴포넌트 목록을 보여주는 것이 아니라,
-디자이너와 개발자가 동일한 기준으로 UI를 이해하고 사용할 수 있도록 하는 것이었습니다.
+문서화의 목적은 컴포넌트 목록을 나열하는 것이 아니라,
+디자이너와 개발자가 같은 기준으로 UI를 이해하고 검토할 수 있도록 하는 것이었습니다.
 
 - [Case Study](./docs/case-study.md)
 
@@ -275,12 +285,12 @@ Light Theme / Dark Theme
 
 ## Application to SLI Scientific
 
-Frame Design System에서 정리한 토큰과 컴포넌트 설계 원칙은
-다음 프로젝트인 SLI Scientific에 적용했습니다.
+Frame Design System에서 정리한 토큰과 컴포넌트 원칙 일부를
+다음 프로젝트인 SLI Scientific의 UI Foundation에 적용했습니다.
 
-SLI Scientific에서는 Frame의 구조를 그대로 복제하기보다,
-B2B 과학장비 플랫폼의 정보 밀도와 전문적인 브랜드 맥락에 맞게
-UI Foundation으로 재구성했습니다.
+Frame의 구조를 그대로 복제하기보다,
+B2B 연구장비 플랫폼의 정보 밀도와 전문적인 브랜드 맥락에 맞게
+컬러, 타이포그래피, 간격과 컴포넌트 기준을 조정했습니다.
 
 ### Applied Principles
 
@@ -307,7 +317,7 @@ SLI Scientific의 사용 맥락에 맞춰 다음 부분을 확장했습니다.
 - B2B 서비스에 맞는 차분한 시각 체계
 
 이를 통해 디자인 토큰과 컴포넌트 원칙이
-실제 B2B 플랫폼의 화면과 인터랙션에 어떻게 적용되는지 검증했습니다.
+서로 다른 서비스 맥락에서 어떻게 조정되고 재사용될 수 있는지 확인했습니다.
 
 - [Live SLI Scientific](https://platform-redesign-five.vercel.app)
 
