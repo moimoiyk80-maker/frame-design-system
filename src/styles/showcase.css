@@ -297,35 +297,16 @@
   .button-showcase {
     display: flex;
     flex-wrap: wrap;
+  
     gap: 16px;
   
     margin-top: 24px;
-    padding: 28px;
+    padding: 28px 0;
   
-    border: 1px solid var(--color-border);
-    border-radius: 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
   
-    background:
-      linear-gradient(
-        to right,
-        transparent calc(25% - 0.5px),
-        var(--color-border) 25%,
-        transparent calc(25% + 0.5px)
-      ),
-      linear-gradient(
-        to right,
-        transparent calc(50% - 0.5px),
-        var(--color-border) 50%,
-        transparent calc(50% + 0.5px)
-      ),
-      linear-gradient(
-        to right,
-        transparent calc(75% - 0.5px),
-        var(--color-border) 75%,
-        transparent calc(75% + 0.5px)
-      );
-  
-    background-color: var(--color-background);
+    background: transparent;
   }
 
   .spinner {
