@@ -50,22 +50,40 @@
   
   .token-grid {
     display: grid;
-    gap: 16px;
-  
     grid-template-columns:
       repeat(auto-fill, minmax(190px, 1fr));
+  
+    gap: 0;
   }
   
   .token-card {
-    padding: 16px;
-  
-    border: 1px solid var(--color-border);
-  
-    border-radius: var(--radius-md);
-  
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+  
+    padding: 20px;
+  
+    margin-top: -1px;
+    margin-left: -1px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+  
+    background: var(--color-background);
+  }
+
+  .token-card strong {
+    color: var(--color-text);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  
+  .token-card span {
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    line-height: 1.4;
   }
 
   .color-group {
@@ -115,60 +133,76 @@
     display: flex;
     flex-direction: column;
   
-    gap: 24px;
+    gap: 0;
   
     margin-top: 24px;
   }
-
+  
   .typography-card {
-    padding: 24px;
+    display: grid;
   
-    border:
-      1px solid
-      var(--color-border);
+    grid-template-columns:
+      minmax(150px, 0.45fr)
+      minmax(0, 1.55fr);
   
-    border-radius: 20px;
+    grid-template-areas:
+      "meta preview";
   
-    background:
-      var(--color-background);
+    gap: 40px;
+    align-items: start;
+  
+    padding: 28px 0;
+  
+    border: 0;
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+  
+    background: transparent;
   }
-
+  
+  .typography-card:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+  
   .typography-preview {
+    grid-area: preview;
+  
     display: flex;
     flex-direction: column;
   
     gap: 8px;
   
-    color:
-      var(--color-text);
+    min-width: 0;
+  
+    color: var(--color-text);
   }
-
+  
   .typography-meta {
-    margin-top: 16px;
+    grid-area: meta;
   
     display: flex;
+    flex-direction: column;
   
-    justify-content:
-      space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
   
-    align-items: center;
+    gap: 6px;
   
-    gap: 12px;
+    margin-top: 2px;
   
-    font-size: 14px;
-  
-    color:
-      var(
-        --color-text-secondary
-      );
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    line-height: 1.5;
   }
-
-  .typography-meta strong {
-    color:
-      var(--color-text);
   
-    text-transform:
-      uppercase;
+  .typography-meta strong {
+    color: var(--color-text);
+  
+    font-size: 12px;
+    font-weight: 700;
+  
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .spacing-preview {
@@ -262,8 +296,36 @@
 
   .button-showcase {
     display: flex;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 16px;
+  
+    margin-top: 24px;
+    padding: 28px;
+  
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+  
+    background:
+      linear-gradient(
+        to right,
+        transparent calc(25% - 0.5px),
+        var(--color-border) 25%,
+        transparent calc(25% + 0.5px)
+      ),
+      linear-gradient(
+        to right,
+        transparent calc(50% - 0.5px),
+        var(--color-border) 50%,
+        transparent calc(50% + 0.5px)
+      ),
+      linear-gradient(
+        to right,
+        transparent calc(75% - 0.5px),
+        var(--color-border) 75%,
+        transparent calc(75% + 0.5px)
+      );
+  
+    background-color: var(--color-background);
   }
 
   .spinner {
@@ -293,37 +355,47 @@
   }
 
   .input-showcase {
-
-    display: flex;
+    display: grid;
   
-    flex-wrap: wrap;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   
-    gap: 32px;
-  
-    margin-top: 24px;
-  }
-
-  .badge-showcase {
-
-    display: flex;
-  
-    flex-wrap: wrap;
-  
-    gap: 16px;
+    gap: 0;
   
     margin-top: 24px;
+    padding: 1px 0 0 1px;
   }
 
-  .tag-showcase {
-
-    display: flex;
+  .input-showcase > * {
+    min-width: 0;
   
-    flex-wrap: wrap;
+    margin-top: -1px;
+    margin-left: -1px;
   
-    gap: 12px;
+    padding: 28px;
   
-    margin-top: 24px;
+    border: 1px solid var(--color-border);
   }
+
+  .badge-showcase,
+.tag-showcase {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: 24px;
+  padding: 24px 0;
+
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.badge-showcase {
+  gap: 16px;
+}
+
+.tag-showcase {
+  gap: 12px;
+}
 
   .layout-showcase {
 
@@ -339,15 +411,14 @@
   }
 
   .layout-block {
-
+    flex: 1 1 280px;
     min-width: 240px;
   }
-
-  .layout-item {
-
-    display: flex;
   
+  .layout-item {
+    display: flex;
     justify-content: space-between;
+    align-items: baseline;
   
     gap: 24px;
   
@@ -359,41 +430,41 @@
   }
 
   .layout-grid-preview {
-
-    margin-top: 32px;
-  
     display: grid;
   
     grid-template-columns:
-      repeat(12, 1fr);
+      repeat(12, minmax(0, 1fr));
   
-    gap: 12px;
-
+    gap: 8px;
+  
+    margin-top: 32px;
     margin-bottom: 56px;
+  
+    padding: 16px;
+  
+    border: 1px solid var(--color-border);
+  
+    background: transparent;
   }
 
   .grid-column {
-
-    height: 60px;
+    height: 72px;
   
     display: flex;
-  
     align-items: center;
-  
     justify-content: center;
   
-    border-radius:
-      var(--radius-sm);
+    border: 1px solid var(--color-border);
+    border-radius: 0;
   
-    background:
-      var(--color-accent-light);
+    background: var(--color-accent-light);
   
-    color:
-      var(--color-accent);
+    color: var(--color-accent);
   
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
   
-    font-size: 14px;
+    letter-spacing: 0.04em;
   }
 
   @media (max-width: 768px) {
@@ -402,6 +473,32 @@
   
       grid-template-columns:
         repeat(6, 1fr);
+    }
+
+    .input-showcase, .layout-showcase {
+  
+      justify-content: center;
+    }
+
+    .input-showcase {
+      grid-template-columns: 1fr;
+    }
+  
+    .button-showcase {
+      background-image: none;
+      padding: 20px;
+    }
+
+    .typography-card {
+      grid-template-columns: 1fr;
+  
+      grid-template-areas:
+        "meta"
+        "preview";
+  
+      gap: 14px;
+  
+      padding: 22px 0;
     }
   
   }
@@ -413,14 +510,9 @@
       grid-template-columns:
         repeat(4, 1fr);
     }
-  
-  }
 
-  @media (max-width: 768px) {
-
-    .input-showcase, .layout-showcase {
-  
-      justify-content: center;
+    .token-grid {
+      grid-template-columns: 1fr;
     }
   
   }
